@@ -12,7 +12,8 @@ function start() {
     mainMenu()
 }
 
-start()
+// start()
+showEmployee()
 
 function mainMenu() {
     inquirer.prompt([{
@@ -46,3 +47,10 @@ function addRole (){
 function addDepartment (){
     console.log("add department")
 };
+
+function showEmployee() {
+    db.showEmployees().then(function(res){
+        console.table(res)
+    })
+    
+  }
